@@ -1,13 +1,13 @@
 {
-  "name": "NewPackageTemplate",
+  "name": "WidgetViewModelLayout",
   "description": "Manual:\n1. Do foo\n2. Do bar",
   "directory": {
     "listBaseElement": [
       {
-        "templateName": "FragmentBase",
+        "templateName": "BaseWidget",
         "extension": "java",
         "mapProperties": {},
-        "name": "Fragment${BASE_NAME}",
+        "name": "Widget${BASE_NAME}",
         "isEnabled": true,
         "script": "",
         "writeRules": "FROM_PARENT",
@@ -17,8 +17,8 @@
         "templateName": "FragmentViewModelBase",
         "extension": "java",
         "mapProperties": {},
-        "name": "Fragment${BASE_NAME}ViewModel",
-        "isEnabled": true,
+        "name": "Widget${BASE_NAME}ViewModel",
+        "isEnabled": false,
         "script": "",
         "writeRules": "FROM_PARENT",
         "CLASS_META_KEY": "File"
@@ -27,9 +27,9 @@
         "templateName": "BaseLayout",
         "extension": "java",
         "mapProperties": {},
-        "name": "fragment_${BASE_NAME}",
+        "name": "widget_${BASE_NAME}",
         "isEnabled": true,
-        "script": "\nfunction  getModifiedName(name) {\n   //A small Example:\n   return name.toLowerCase();\n}\n",
+        "script": "\nfunction  getModifiedName(name) {\n return camelCaseToDash(name);\n}\nfunction camelCaseToDash(str) {\n    return str\n        .replace(/[^a-zA-Z0-9]+/g, \u0027-\u0027)\n        .replace(/([A-Z]+)([A-Z][a-z])/g, \u0027$1-$2\u0027)\n        .replace(/([a-z])([A-Z])/g, \u0027$1-$2\u0027)\n        .replace(/([0-9])([^0-9])/g, \u0027$1-$2\u0027)\n        .replace(/([^0-9])([0-9])/g, \u0027$1-$2\u0027)\n        .replace(/-+/g, \u0027_\u0027)\n        .toLowerCase();\n}",
         "customPath": {
           "listSearchAction": [
             {

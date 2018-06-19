@@ -1,10 +1,10 @@
 {
-  "name": "NewPackageTemplate",
+  "name": "FragmentViewModelLayout",
   "description": "Manual:\n1. Do foo\n2. Do bar",
   "directory": {
     "listBaseElement": [
       {
-        "templateName": "FragmentBase",
+        "templateName": "BaseFragment",
         "extension": "java",
         "mapProperties": {},
         "name": "Fragment${BASE_NAME}",
@@ -14,7 +14,7 @@
         "CLASS_META_KEY": "File"
       },
       {
-        "templateName": "FragmentViewModelBase",
+        "templateName": "BaseFragmentViewModel",
         "extension": "java",
         "mapProperties": {},
         "name": "Fragment${BASE_NAME}ViewModel",
@@ -29,7 +29,7 @@
         "mapProperties": {},
         "name": "fragment_${BASE_NAME}",
         "isEnabled": true,
-        "script": "\nfunction  getModifiedName(name) {\n   //A small Example:\n   return name.toLowerCase();\n}\n",
+        "script": "\nfunction  getModifiedName(name) {\n return camelCaseToDash(name);\n}\nfunction camelCaseToDash(str) {\n    return str\n        .replace(/[^a-zA-Z0-9]+/g, \u0027-\u0027)\n        .replace(/([A-Z]+)([A-Z][a-z])/g, \u0027$1-$2\u0027)\n        .replace(/([a-z])([A-Z])/g, \u0027$1-$2\u0027)\n        .replace(/([0-9])([^0-9])/g, \u0027$1-$2\u0027)\n        .replace(/([^0-9])([0-9])/g, \u0027$1-$2\u0027)\n        .replace(/-+/g, \u0027_\u0027)\n        .toLowerCase();\n}",
         "customPath": {
           "listSearchAction": [
             {
@@ -67,7 +67,7 @@
       "name": "BASE_NAME",
       "isEnabled": true,
       "script": "",
-      "value": "14"
+      "value": "FifthManagement"
     }
   ],
   "listTextInjection": [],

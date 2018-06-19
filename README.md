@@ -11,6 +11,6 @@ Plugin Idea for multiple class generation:
 ### Idea Base Class generation(File and Code Templates) ###
 * Path: /Users/{UserName}/Library/Preferences/AndroidStudio3.1/fileTemplates
 * BaseLayout (with <layout> root for databinding)
-* FragmentBase (with ViewDataBinding b)
-* WidgetBase (with ViewDataBinding b, multiple constructos with init(context) call
-* FragmentViewModelBase (ViewModelBase extended)
+* BaseFragment (with ViewDataBinding b)
+* BaseWidget (with ViewDataBinding b, multiple constructos with init(context) call
+* BaseFragmentViewModel (ViewModelBase extended)
