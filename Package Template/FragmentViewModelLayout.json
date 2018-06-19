@@ -1,0 +1,79 @@
+{
+  "name": "NewPackageTemplate",
+  "description": "Manual:\n1. Do foo\n2. Do bar",
+  "directory": {
+    "listBaseElement": [
+      {
+        "templateName": "FragmentBase",
+        "extension": "java",
+        "mapProperties": {},
+        "name": "Fragment${BASE_NAME}",
+        "isEnabled": true,
+        "script": "",
+        "writeRules": "FROM_PARENT",
+        "CLASS_META_KEY": "File"
+      },
+      {
+        "templateName": "FragmentViewModelBase",
+        "extension": "java",
+        "mapProperties": {},
+        "name": "Fragment${BASE_NAME}ViewModel",
+        "isEnabled": true,
+        "script": "",
+        "writeRules": "FROM_PARENT",
+        "CLASS_META_KEY": "File"
+      },
+      {
+        "templateName": "BaseLayout",
+        "extension": "java",
+        "mapProperties": {},
+        "name": "fragment_${BASE_NAME}",
+        "isEnabled": true,
+        "script": "\nfunction  getModifiedName(name) {\n   //A small Example:\n   return name.toLowerCase();\n}\n",
+        "customPath": {
+          "listSearchAction": [
+            {
+              "actionType": "DIR_ABOVE",
+              "name": "main",
+              "deepLimit": -1,
+              "isRegexp": false
+            },
+            {
+              "actionType": "DIR_BELOW",
+              "name": "res",
+              "deepLimit": -1,
+              "isRegexp": false
+            },
+            {
+              "actionType": "DIR_BELOW",
+              "name": "layout",
+              "deepLimit": -1,
+              "isRegexp": false
+            }
+          ]
+        },
+        "writeRules": "FROM_PARENT",
+        "CLASS_META_KEY": "File"
+      }
+    ],
+    "name": "${BASE_NAME}",
+    "isEnabled": true,
+    "script": "",
+    "writeRules": "USE_EXISTING"
+  },
+  "mapGlobalVars": {},
+  "listGlobalVariable": [
+    {
+      "name": "BASE_NAME",
+      "isEnabled": true,
+      "script": "",
+      "value": "14"
+    }
+  ],
+  "listTextInjection": [],
+  "skipRootDirectory": true,
+  "skipDefiningNames": false,
+  "shouldRegisterAction": false,
+  "shouldShowReport": false,
+  "fileTemplateSource": "DEFAULT_ONLY"
+}
